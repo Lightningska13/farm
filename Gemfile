@@ -28,7 +28,6 @@ end
 
 gem 'authlogic' 
 gem 'paperclip', '~>2.7'
-gem 'ckeditor', '3.7.1'
 gem 'acts_as_list'
 gem 'jquery-rails'
 
