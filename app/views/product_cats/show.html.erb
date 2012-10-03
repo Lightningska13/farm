@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <b>Category:</b>
+  <%= @product_cat.cat_name %>
+</p>
+<p>
+  <b>Description:</b>
+  	<%= @product_cat.description %>
+</p>
+	<% if admin? %>
+		<%= link_to 'Edit', edit_product_cat_path(@product_cat), :class => 'admin'  %> 
+		<%= link_to 'Back', product_cats_path, :class => 'admin'  %>
+	<% end %>

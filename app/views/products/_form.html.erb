@@ -1,0 +1,39 @@
+<%- content_for(:fck) do -%>
+	<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
+<%- end -%>
+
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :size => 60 %>
+  <br />
+  <br />
+  <div class="field">
+  <%= f.label 'Category' %><br />
+		<%= collection_select(:product, :product_cat_id, @product_cats, :id, :cat_name, :prompt => true) %>
+  </div>
+	<br />
+	<br />  
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+   	<%= f.cktext_area :description, :toolbar=>'Basic', :width=>'500px', :height=>'200px' %>
+  <br />
+  <br />
+  </div>
+  <div class="actions">
+    <br /><%= f.submit %>
+  </div>
+</div> <!-- end boxLeft -->
+<% end %>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+  <title>Wilson's Tannenbaum Farm</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+	<style type="text/css">
+      @media (min-width: 481px) and (max-width: 768px) {
+		#wrapper {width: 768px;}
+		#header {background: url('/assets/wilsonlogo768.png'); background-repeat: no-repeat; height: 150px; width: 768px;}
+		#mainNav {width: 758px;}
+		#mainContent {width: 758px;}
+		h2 {font-size: 95%;}
+		.blurb {width: 700px;}
+		#mainCopy {width: 320px;}
+		#contactUs {margin-top: -154px; margin-right: 5px}
+		#products {width: 350px; height: 305px;}
+		#products p {width: 180px; float: right;}
+      } 
+
+      @media (min-width: 321px) and (max-width: 480px) {
+		#wrapper {width: 480px;}
+		#header {background: url('/assets/wilsonlogo480.png'); background-repeat: no-repeat; width: 480px; height: 96px;}
+		#mainNav {width: 470px;}
+		#mainNav a {margin-left: 5px;}
+		#contactUs {margin-top: -96px; margin-right: 10px;}
+		#contactUs a {color: #264420; padding-left: 0;}
+		#home {background: url('/assets/wilsonnavhome480.png'); width: 40px; height: 20px;}
+		#about {background: url('/assets/wilsonnavabout480.png'); width: 40px; height: 20px;}
+		#decorations {background: url('/assets/wilsonnavdecorations480.png'); width: 88px; height: 20px;}
+		#landscape {background: url('/assets/wilsonnavlandscape480.png'); width: 120px; height: 20px;}
+		#holiday {background: url('/assets/wilsonnavholiday480.png'); width: 88px; height: 20px;}
+		h1 {font-size: 130%;}
+		#mainContent {width: 450px;}
+		#mainContent img {margin-left: 30px;}
+		.blurb {width: 440px;}
+		#mainCopy {width: 440px;}
+		#mainCopy p {font-size: x-small;}
+		#products {width: 420px; height: 260px;}
+		#products p {width: 240px;}
+		#productImage img {margin-left: 0px;}
+		}
+      }
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+		</div>
+		<div id="contactUs">
+			<%= link_to 'Contact Us', :controller => 'contact_us', :action => 'new' %>
+			<%= link_to image_tag('/assets/wilsonfb.png'), ('http://www.facebook.com/pages/Wilsons-Tannenbaum-Farm/167007269977016?ref=ts'), :target => "_blank" %><br />
+			<p>269.781.2433 | 269.317.1565</p>
+		</div>
+		<div id="mainNav">
+			<%= render "/layouts/main_nav" %>
+		</div>
+			<%= render "/layouts/admin_nav" %>
+		<div id="mainContent">
+			<%= yield %>
+		</div>
+	<footer>
+		Wilson's Tannenbaum Farm<br />
+		13771 N Drive North, Battle Creek MI 49014 269.781.2433<br />
+		<%= link_to "Black Sails Studio", ('http://www.blacksailsstudio.com/'), :target => "_blank" %>
+	</footer>
+	</div><!-- end Wrapper -->
+</body>
+</html>

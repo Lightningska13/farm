@@ -1,0 +1,9 @@
+<h1>Show Product</h1>
+  <p><%= @product.name %></p>
+  	<%== @product.description %>	
+<%= link_to 'Back', :back %>
+<% if admin? %>
+<%= link_to 'Edit', edit_product_path(@product), :class=>'admin' %> |
+<%= link_to 'Index', products_path, :class=>'admin' %>
+<% end %>
+</div>
