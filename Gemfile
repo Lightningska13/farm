@@ -27,8 +27,6 @@ group :assets do
 end
 
 gem 'authlogic' 
-gem 'paperclip', '~>2.7'
-gem 'acts_as_list'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password

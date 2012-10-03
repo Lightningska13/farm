@@ -4,8 +4,6 @@ Farm::Application.routes.draw do
   
   resources "user_sessions"
   
-  resources "events"
-  
   resources "contact_us"
   
   resources "products"
@@ -20,7 +18,7 @@ Farm::Application.routes.draw do
   
   resources "holiday"
   
-  match 'login' => "user_sessions#new",      :as => :login
+  match 'login' => "user_sessions#new", :as => :login
 	match 'logout' => "user_sessions#destroy", :as => :logout
   
   root :to => "dash#index"
