@@ -3,3 +3,6 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-Agent: *
 # Disallow: /
+
+Sitemap: http://www.wilsontreefarm.com/sitemap1.xml.gz
+Sitemap: http://www.wilsontreefarm.com/sitemap_index.xml.gz
